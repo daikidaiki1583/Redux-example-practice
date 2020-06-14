@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { countUp,countDown } from  '../actions/index' 
 
 class Counter extends Component {
   constructor(props) {
@@ -51,4 +53,4 @@ Counter.propTypes = {
   onDecrement: PropTypes.func.isRequired
 }
 
-export default Counter
+export default connect(null,{countUp,countDown})(Counter)
